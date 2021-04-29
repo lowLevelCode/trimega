@@ -3,16 +3,41 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule, NbButtonModule, NbSelectModule, NbDatepickerModule, NbFormFieldModule, NbIconModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SsnFormatDirective } from './shared/directives/ssn-format.directive';
+import { SsnFormatPipe } from './shared/pipes/ssn-format.pipe';
+import { NbDateFnsDateModule } from '@nebular/date-fns';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SsnFormatDirective,
+    SsnFormatPipe,    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    NbCardModule,
+    NbInputModule,
+    NbButtonModule,
+    NbSelectModule,
+    NbDatepickerModule.forRoot(),
+    NbFormFieldModule,
+    NbIconModule,
+    NbDateFnsDateModule    
   ],
-  providers: [],
+  providers: [SsnFormatPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
