@@ -11,6 +11,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SsnFormatDirective } from './shared/directives/ssn-format.directive';
 import { SsnFormatPipe } from './shared/pipes/ssn-format.pipe';
 import { NbDateFnsDateModule } from '@nebular/date-fns';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+const maskConfigFunction: () => Partial<IConfig> = () => {
+  return {
+    validation: false,
+  };
+};
 
 @NgModule({
   declarations: [
@@ -33,6 +40,7 @@ import { NbDateFnsDateModule } from '@nebular/date-fns';
     NbButtonModule,
     NbSelectModule,
     NbDatepickerModule.forRoot(),
+    NgxMaskModule.forRoot(maskConfigFunction),
     NbFormFieldModule,
     NbIconModule,
     NbDateFnsDateModule    

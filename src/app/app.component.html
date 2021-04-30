@@ -53,7 +53,7 @@
                 <div>
                   <input type="text" fullWidth nbInput  fieldSize="medium" 
                   [status]="validateFormcontrolName('ssn','warning')"
-                  placeholder="SSN: (000-00-0000)" formControlName="ssn">
+                  placeholder="SSN: (000-00-0000)" formControlName="ssn" mask="000-00-0000">
                   <div class="hint">
                     Enter a security number or Dob.
                   </div>
@@ -73,7 +73,8 @@
                   </ng-container>
                 </div>
                 <div>
-                  <input type="text" fullWidth nbInput  fieldSize="medium" placeholder="Phone (000) 000-0000" formControlName="phone">  
+                  <input type="text" fullWidth nbInput  fieldSize="medium" mask= "(000) 000-0000"
+                  placeholder="Phone (000) 000-0000" formControlName="phone">  
                   <ng-container *ngIf="form.get('phone').invalid && form.get('phone').touched">
                     <p class="caption status-danger" *ngIf="form.get('phone').errors?.pattern">
                       Add correct format pattern (000) 000-0000
@@ -81,7 +82,8 @@
                   </ng-container>
                 </div>
                 <div>
-                  <input type="text" fullWidth nbInput  fieldSize="medium" placeholder="Alternate Phone (000) 000-0000 (EVC)" formControlName="alternativePhone">  
+                  <input type="text" fullWidth nbInput  fieldSize="medium" mask= "(000) 000-0000"
+                  placeholder="Alternate Phone (000) 000-0000 (EVC)" formControlName="alternativePhone">  
                   <div class="hint">
                     Enter secondary EVC phone number (Not Required).
                   </div>
